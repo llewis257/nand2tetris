@@ -1,0 +1,50 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/Register.hdl
+
+/**
+ * 16-bit register:
+ * If load[t] == 1 then out[t+1] = in[t]
+ * else out does not change
+ */
+
+CHIP Register {
+    IN in[16], load;
+    OUT out[16];
+
+    PARTS:
+Mux(a=stable0, b=in[0], sel=load, out=c0);
+DFF(in=c0, out=stable0, out=out[0]);
+Mux(a=stable1, b=in[1], sel=load, out=c1);
+DFF(in=c1, out=stable1, out=out[1]);
+Mux(a=stable2, b=in[2], sel=load, out=c2);
+DFF(in=c2, out=stable2, out=out[2]);
+Mux(a=stable3, b=in[3], sel=load, out=c3);
+DFF(in=c3, out=stable3, out=out[3]);
+Mux(a=stable4, b=in[4], sel=load, out=c4);
+DFF(in=c4, out=stable4, out=out[4]);
+Mux(a=stable5, b=in[5], sel=load, out=c5);
+DFF(in=c5, out=stable5, out=out[5]);
+Mux(a=stable6, b=in[6], sel=load, out=c6);
+DFF(in=c6, out=stable6, out=out[6]);
+Mux(a=stable7, b=in[7], sel=load, out=c7);
+DFF(in=c7, out=stable7, out=out[7]);
+Mux(a=stable8, b=in[8], sel=load, out=c8);
+DFF(in=c8, out=stable8, out=out[8]);
+Mux(a=stable9, b=in[9], sel=load, out=c9);
+DFF(in=c9, out=stable9, out=out[9]);
+Mux(a=stable10, b=in[10], sel=load, out=c10);
+DFF(in=c10, out=stable10, out=out[10]);
+Mux(a=stable11, b=in[11], sel=load, out=c11);
+DFF(in=c11, out=stable11, out=out[11]);
+Mux(a=stable12, b=in[12], sel=load, out=c12);
+DFF(in=c12, out=stable12, out=out[12]);
+Mux(a=stable13, b=in[13], sel=load, out=c13);
+DFF(in=c13, out=stable13, out=out[13]);
+Mux(a=stable14, b=in[14], sel=load, out=c14);
+DFF(in=c14, out=stable14, out=out[14]);
+Mux(a=stable15, b=in[15], sel=load, out=c15);
+DFF(in=c15, out=stable15, out=out[15]);
+
+}
